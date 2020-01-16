@@ -10,7 +10,7 @@
 	<div id="page" class="container">
 		<h1 class="heading has-text-weight-bold is-size-4">Send Mail</h1>
 
-		<form method="POST" action="{{ route('mail.htmlmailsend') }}">
+		<form method="POST" action="{{ route('mail.sendmarkdownmail') }}">
 			@csrf
 			<div class="field">
 				<label class="label" for="article">Email</label>

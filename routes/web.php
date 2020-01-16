@@ -14,7 +14,8 @@
 Route::get('/services', 'PagesController@home');
 
 Route::get('/contact', 'ContactController@home');
-Route::post('/contact', 'ContactController@sendmail')->name('mail.htmlmailsend');
+Route::post('/contact', 'ContactController@sendmarkdownmail')->name('mail.sendmarkdownmail');
+// Route::post('/contact', 'ContactController@sendmail')->name('mail.htmlmailsend');
 // Route::post('/contact', 'ContactController@store')->name('mail.rawmailsend');
 
 Route::get('/facadestest', 'PagesController@facadesTest');

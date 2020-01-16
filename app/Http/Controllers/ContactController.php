@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactMe;
+use App\Mail\ContactUs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -33,6 +34,17 @@ class ContactController extends Controller
         
         Mail::to(request('email'))
             ->send(new ContactMe('Mail Topic'));
+
+        return redirect('/contact')->with('message', 'Mail Sent');
+    }
+    
+    // sending Raw Mail
+    public function sendmarkdownmail()
+    {
+        request()->validate(['email' => 'required|email']);
+        
+        Mail::to(request('email'))
+            ->send(new ContactUs());
 
         return redirect('/contact')->with('message', 'Mail Sent');
     }
