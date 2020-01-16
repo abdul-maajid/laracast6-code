@@ -59,6 +59,9 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::get('payments/create', 'PaymentsController@create')->middleware('auth');
+Route::post('payments', 'PaymentsController@store')->middleware('auth')->name('payment.store');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
