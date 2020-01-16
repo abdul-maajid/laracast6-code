@@ -49,7 +49,7 @@ class ArticlesController extends Controller
     public function edit(Article $article) {
     	// shows a view edit an existing resource
 
-    	return view('articles.edit', ['article' => $article]);
+    	return view('articles.edit', ['article' => $article, 'tags' => Tags::all()]);
     }
 
     public function update(Article $article) {
