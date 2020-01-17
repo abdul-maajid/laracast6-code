@@ -61,6 +61,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('payments/create', 'PaymentsController@create')->middleware('auth');
 Route::post('payments', 'PaymentsController@store')->middleware('auth')->name('payment.store');
+Route::get('notification', 'NotificationsController@show')->middleware('auth')->name('notifications.show');
 
 Auth::routes();
 
