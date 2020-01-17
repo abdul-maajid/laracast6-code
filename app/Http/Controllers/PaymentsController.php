@@ -36,7 +36,7 @@ class PaymentsController extends Controller
      */
     public function store(Request $request)
     {
-        request()->user()->notify(new PaymentReceived());
+        request()->user()->notify(new PaymentReceived(900));
         // or try using Notification Facades
         // Notification::send(request()->user(), new PaymentReceived());
         // redirect('/payments/create')->with('message', 'Payment Received Notification send!!!');
